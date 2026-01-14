@@ -1,6 +1,6 @@
 # Zomato Restaurant Data Analysis
 
-An exploratory data analysis (EDA) of the Zomato restaurant dataset using Python, Pandas, and Seaborn.
+An exploratory data analysis (EDA) of the Zomato restaurant dataset using Python,Numpy, Pandas, Matplotlib and Seaborn.
 
 ## Project Overview
 
