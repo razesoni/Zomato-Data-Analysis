@@ -95,5 +95,4 @@ Repository owner: @razesoni
 
 ---
 
-Suggested short repository description (for the repo settings):
-"Exploratory data analysis of the Zomato restaurants dataset using Python, Pandas, and Seaborn — includes data cleaning, visualizations, and insights."
+
