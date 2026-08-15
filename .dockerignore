@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+env/
+venv/
+.venv/
+.git/
+.gitignore
+data/raw/*
+notebooks/*.ipynb
+*.db
+*.sqlite3
+.DS_Store
+
+# Do NOT include build artifacts or local envs
+
