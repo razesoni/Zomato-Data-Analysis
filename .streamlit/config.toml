@@ -1,0 +1,11 @@
+[theme]
+primaryColor = "#CB202D"          # Zomato Red accent
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F8F9FA"
+textColor = "#1C1C1C"
+font = "sans serif"
+
+[server]
+headless = true
+enableCORS = false
+enableXsrfProtection = true
