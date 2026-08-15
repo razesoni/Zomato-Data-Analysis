@@ -1,97 +1,99 @@
-# Zomato Restaurant Data Analysis
+# Zomato Data Analysis
 
-An exploratory data analysis (EDA) of the Zomato restaurant dataset using Python,Numpy, Pandas, Matplotlib and Seaborn.
+Exploratory data analysis (EDA) of the Zomato restaurants dataset using Python, Pandas, NumPy, Matplotlib, and Seaborn. This repository contains Jupyter notebooks that walk through data loading, cleaning, transformation, visualization, and insights discovery from the Zomato dataset.
 
 ## Project Overview
 
-This project performs an exploratory data analysis (EDA) on the Zomato dataset. The main objective is to analyze restaurant data to uncover patterns, identify trends, and understand the factors that influence restaurant ratings, cost, and popularity.
-
----
+This project performs an exploratory data analysis (EDA) on the Zomato dataset to uncover patterns and trends in restaurant ratings, cuisines, costs, and city-level behaviour. The analysis is reproducible and organized as Jupyter notebooks that document the steps from raw data to findings.
 
 ## Dataset
 
-The dataset used is `zomato-dataset.csv`, which was sourced from https://www.kaggle.com/datasets/shrutimehta/zomato-restaurants-data. It contains 9,551 records of restaurants from various cities.
+- Source: zomato-dataset.csv (original source: https://www.kaggle.com/datasets/shrutimehta/zomato-restaurants-data)
+- Records: ~9,551 restaurants (as provided in the dataset)
+- Notes: The raw dataset requires cleaning — missing values, inconsistent types, and categorical normalization are addressed in the notebooks.
 
-The key columns in this dataset include:
-* **Restaurant ID:** Unique ID for each restaurant
-* **Restaurant Name:** Name of the restaurant
-* **City:** City where the restaurant is located
-* **Cuisines:** Types of cuisines offered
-* **Average Cost for two:** The average cost for two people
-* **Has Table booking:** Whether the restaurant has table booking
-* **Has Online delivery:** Whether the restaurant offers online delivery
-* **Price range:** The price range of the restaurant (1-4)
-* **Aggregate rating:** The average rating of the restaurant (out of 5)
-* **Rating text:** A categorical description of the rating (e.g., "Good", "Excellent")
-* **Votes:** The number of votes the restaurant has received
+## Notebooks
 
----
+The main notebooks in this repository:
 
-## Key Questions Addressed
+- `zomato_analysis.ipynb` — end-to-end analysis (data cleaning, EDA, visualizations, conclusions).
+- If you have multiple notebooks, consider naming them for the workflow (e.g., `0_data_overview.ipynb`, `1_data_cleaning.ipynb`, `2_visualizations.ipynb`, `3_insights.ipynb`).
 
-This analysis aims to answer the following questions:
+## Key Questions
 
-1.  What is the overall distribution of restaurant ratings?
-2.  How do services like **table booking** and **online delivery** impact a restaurant's rating?
-3.  What is the relationship between the **average cost** and the **aggregate rating**?
-4.  Which **cities** have the highest concentration of restaurants in the dataset?
-5.  What are the most popular **cuisines**?
-6.  Is there a correlation between the number of **votes** and the **rating**?
+The analysis focuses on questions such as:
 
----
+- What is the overall distribution of restaurant ratings?
+- How do services like table booking and online delivery relate to ratings?
+- What is the relationship between average cost for two and aggregate rating?
+- Which cities and cuisines dominate the dataset?
+- Is there a correlation between the number of votes and ratings?
 
 ## Analysis Workflow
 
-The analysis was conducted in a Jupyter Notebook (`zomato_analysis.ipynb`) and followed these steps:
+1. Data loading with pandas (using `latin-1` encoding if required).
+2. Data cleaning: handle missing values, type conversions, and duplicate removal.
+3. Exploratory analysis and summary statistics for numeric and categorical columns.
+4. Visualizations using Seaborn/Matplotlib: histograms, bar plots, box plots, and scatter plots.
+5. Interpretation and key findings summarized in the final notebook section.
 
-1.  **Data Loading:** Imported the dataset using Pandas, specifying `latin-1` encoding.
-2.  **Data Cleaning:**
-    * Checked for and handled missing values (found in the `Cuisines` column).
-    * Checked for and removed any duplicate rows.
-3.  **Exploratory Data Analysis (EDA):**
-    * Generated descriptive statistics for numerical columns (`Aggregate rating`, `Votes`, `Average Cost for two`).
-    * Examined the value counts for categorical columns (`City`, `Cuisines`, `Rating text`).
-4.  **Data Visualization:**
-    * Used **Seaborn** and **Matplotlib** to create plots to answer the key questions.
-    * **Histogram:** To show the distribution of aggregate ratings.
-    * **Bar Charts:** To compare restaurant counts by city and cuisine types.
-    * **Box Plots:** To compare ratings for restaurants with/without table booking and online delivery.
-    * **Scatter Plots:** To explore the relationship between rating vs. votes and rating vs. cost.
+## Key Findings (example summary)
+
+- Most restaurants have aggregate ratings between ~2.8 and 4.0.
+- Restaurants offering table booking generally show higher average ratings.
+- Positive correlation exists between number of votes and rating (more votes → more reliable ratings).
+- Popular cuisines and city-wise trends are highlighted in the visualizations.
+
+(Please update this section if you add new analyses or refine the notebooks.)
+
+## Tools and Libraries
+
+- Python 3.8+
+- pandas
+- numpy
+- matplotlib
+- seaborn
+- jupyter
+
+## How to run
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/razesoni/Zomato-Data-Analysis.git
+```
+
+2. Install dependencies (create `requirements.txt` if not present):
+
+```bash
+pip install -r requirements.txt
+# or
+pip install pandas numpy matplotlib seaborn jupyter
+```
+
+3. Open the main notebook:
+
+```bash
+jupyter lab
+# or
+jupyter notebook
+```
+
+4. Run notebooks in order to reproduce the analysis.
+
+## Contributing
+
+Contributions are welcome. Open an issue to discuss changes or submit a pull request with a clear description of your updates.
+
+## License
+
+This repository is provided under the MIT License. See `LICENSE` for details.
+
+## Contact
+
+Repository owner: @razesoni
 
 ---
 
-## Key Findings
-
-* **Finding 1:** There were nine missing values in the Cuisines column
-* **Finding 2:** Maximum Transactions were done in India
-* **Finding 2:** The majority of restaurants have an aggregate rating between 2.8 and 4.0.
-* **Finding 3:** Restaurants that offer **table booking** have a significantly higher average rating than those that do not.
-* **Finding 4:** There is a positive correlation between the number of **votes** and the **aggregate rating**; more votes generally mean a higher (and more reliable) rating. 
-
----
-
-## Tools and Libraries Used
-
-* **Python 3:** The core programming language.
-* **Pandas:** For data manipulation and analysis.
-* **NumPy:** For numerical operations.
-* **Matplotlib:** For basic data visualization.
-* **Seaborn:** For advanced statistical visualization.
-* **Jupyter Notebook:** As the interactive development environment.
-
----
-
-## How to Use This Repository
-
-1.  Clone the repository to your local machine:
-    ```bash
-    git clone [https://github.com/razesoni/Zomato-Data-Analysis.git](https://github.com/razesoni/Zomato-Data-Analysis.git)
-    ```
-2.  Install the required libraries:
-    ```bash
-    pip install pandas numpy matplotlib seaborn
-    ```
-3.  Open the Jupyter Notebook to view the analysis:
-    ```bash
-    jupyter notebook zomato_analysis.ipynb
-    ```
+Suggested short repository description (for the repo settings):
+"Exploratory data analysis of the Zomato restaurants dataset using Python, Pandas, and Seaborn — includes data cleaning, visualizations, and insights."
