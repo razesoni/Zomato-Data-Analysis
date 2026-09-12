@@ -18,3 +18,17 @@ Thumbs.db
 
 # Large raw datasets (uncomment if dataset exceeds GitHub's 100MB limit)
 # data/raw/*.csv
+# Local development and generated caches
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.virtual_documents/
+anaconda_projects/
+.pytest_cache/
+.coverage
+htmlcov/

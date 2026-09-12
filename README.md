@@ -1,98 +1,36 @@
-# Zomato Data Analysis
+# Zomato Restaurant Analytics
 
-Exploratory data analysis (EDA) of the Zomato restaurants dataset using Python, Pandas, NumPy, Matplotlib, and Seaborn. This repository contains Jupyter notebooks that walk through data loading, cleaning, transformation, visualization, and insights discovery from the Zomato dataset.
+Exploratory analysis and an interactive Streamlit dashboard for restaurant ratings, cuisines, services, votes and costs.
 
-## Project Overview
+## Included work
 
-This project performs an exploratory data analysis (EDA) on the Zomato dataset to uncover patterns and trends in restaurant ratings, cuisines, costs, and city-level behaviour. The analysis is reproducible and organized as Jupyter notebooks that document the steps from raw data to findings.
+- `notebooks/zomato_analysis.ipynb`: original EDA
+- `src/utils.py`: loading, cleaning and dashboard helpers
+- `app.py`: Streamlit interface
+- `data/raw/`: restaurant data and country codes
+- `Dockerfile`, `docker-compose.yml`, `DEPLOYMENT.md`: container/deployment configuration
 
-## Dataset
+## Run locally
 
-- Source: zomato-dataset.csv (original source: https://www.kaggle.com/datasets/shrutimehta/zomato-restaurants-data)
-- Records: ~9,551 restaurants (as provided in the dataset)
-- Notes: The raw dataset requires cleaning — missing values, inconsistent types, and categorical normalization are addressed in the notebooks.
-
-## Notebooks
-
-The main notebooks in this repository:
-
-- `zomato_analysis.ipynb` — end-to-end analysis (data cleaning, EDA, visualizations, conclusions).
-- If you have multiple notebooks, consider naming them for the workflow (e.g., `0_data_overview.ipynb`, `1_data_cleaning.ipynb`, `2_visualizations.ipynb`, `3_insights.ipynb`).
-
-## Key Questions
-
-The analysis focuses on questions such as:
-
-- What is the overall distribution of restaurant ratings?
-- How do services like table booking and online delivery relate to ratings?
-- What is the relationship between average cost for two and aggregate rating?
-- Which cities and cuisines dominate the dataset?
-- Is there a correlation between the number of votes and ratings?
-
-## Analysis Workflow
-
-1. Data loading with pandas (using `latin-1` encoding if required).
-2. Data cleaning: handle missing values, type conversions, and duplicate removal.
-3. Exploratory analysis and summary statistics for numeric and categorical columns.
-4. Visualizations using Seaborn/Matplotlib: histograms, bar plots, box plots, and scatter plots.
-5. Interpretation and key findings summarized in the final notebook section.
-
-## Key Findings (example summary)
-
-- Most restaurants have aggregate ratings between ~2.8 and 4.0.
-- Restaurants offering table booking generally show higher average ratings.
-- Positive correlation exists between number of votes and rating (more votes → more reliable ratings).
-- Popular cuisines and city-wise trends are highlighted in the visualizations.
-
-(Please update this section if you add new analyses or refine the notebooks.)
-
-## Tools and Libraries
-
-- Python 3.8+
-- pandas
-- numpy
-- matplotlib
-- seaborn
-- jupyter
-
-## How to run
-
-1. Clone the repository:
+From the repository root in a separate Python environment:
 
 ```bash
-git clone https://github.com/razesoni/Zomato-Data-Analysis.git
+python -m pip install -r requirements.txt
+python -m streamlit run app.py
 ```
 
-2. Install dependencies (create `requirements.txt` if not present):
+Open the URL printed by Streamlit. For notebook exploration, open `notebooks/zomato_analysis.ipynb` and check its dataset paths against the repository layout.
 
-```bash
-pip install -r requirements.txt
-# or
-pip install pandas numpy matplotlib seaborn jupyter
-```
+## Questions to explore
 
-3. Open the main notebook:
+How do restaurant ratings differ across cuisines, cities and booking/delivery options? How do vote count and cost relate to ratings? Use dashboard filters to inspect the sample before interpreting averages.
 
-```bash
-jupyter lab
-# or
-jupyter notebook
-```
+## Interpretation and limitations
 
-4. Run notebooks in order to reproduce the analysis.
+The analysis is observational: service availability and ratings do not establish causation. Exclude or explicitly describe unrated entries; compare sample sizes and country/currency context. Exact findings should be reproduced from the notebook before being quoted.
 
-## Contributing
+The earlier README linked [this Kaggle dataset](https://www.kaggle.com/datasets/shrutimehta/zomato-restaurants-data). Confirm that it matches the included CSV and verify redistribution terms. Live hosting is not verified by this repository.
 
-Contributions are welcome. Open an issue to discuss changes or submit a pull request with a clear description of your updates.
+## Next steps
 
-## License
-
-This repository is provided under the MIT License. See `LICENSE` for details.
-
-## Contact
-
-Repository owner: @razesoni
-
----
-
-
+Publish three reproducible findings with charts and sample sizes, add data-quality tests, and validate the container in a clean environment.
