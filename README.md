@@ -12,7 +12,7 @@ Exploratory analysis and an interactive Streamlit dashboard for restaurant ratin
 
 ## Run locally
 
-From the repository root in a separate Python environment:
+Use Python 3.11 for the pinned NumPy/pandas versions. From the repository root in a separate virtual environment:
 
 ```bash
 python -m pip install -r requirements.txt
